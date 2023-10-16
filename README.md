@@ -1,34 +1,26 @@
-performing sentiment analysis on a dataset of movie reviews from IMDb. It follows these main steps:
+Conducted sentiment analysis on a dataset of IMDb movie reviews using various machine learning classifiers and different text vectorization techniques.
 
-Data Loading: The code starts by loading a CSV file containing the movie reviews and their corresponding sentiment labels (positive or negative). It uses the Pandas library to read the CSV file into a DataFrame (df).
+Here's a summary of the key steps:
 
-Data Preprocessing:
+Data Loading: The IMDb movie review dataset is loaded into a Pandas DataFrame.
 
-The sentiment labels in the 'sentiment' column of the DataFrame are converted from 'positive' and 'negative' to numerical values, 1 and 0, respectively.
-Data Splitting: The dataset is split into training and test sets using the train_test_split function from scikit-learn (X_train, X_test, y_train, y_test). The test size is set to 20% of the data, and a random seed (random_state) is provided for reproducibility.
+Data Preprocessing: Sentiment labels ('positive' and 'negative') are converted to numerical values (1 and 0).
 
-Feature Extraction using TF-IDF Vectorization:
+Data Splitting: The dataset is split into training and test sets.
 
-TF-IDF (Term Frequency-Inverse Document Frequency) vectorization is applied to convert the text data (movie reviews) into numerical vectors.
-A TfidfVectorizer is created and fitted to the training data (vectorizer.fit(X_train)).
-The training and test data are transformed into TF-IDF vectors (X_train_vectorized and X_test_vectorized) using the fitted vectorizer.
-Machine Learning Model Training and Evaluation:
+TF-IDF Vectorization: Text data is transformed into TF-IDF vectors for both training and test sets.
 
-Four different machine learning classifiers are trained and evaluated on both TF-IDF and Bag of Words (BoW) representations of the text data.
-For each classifier (Decision Tree, Random Forest, LinearSVC, Multinomial Naive Bayes):
+Machine Learning Models:
 
-The classifier is created and trained on the vectorized training data.
-Predictions are made on the test data.
-Various classification metrics are calculated, including F1 score, accuracy, precision, recall, ROC curve, and AUC.
-The results are printed for each classifier.
-Bag of Words Vectorization and Model Evaluation:
+Decision Tree, Random Forest, LinearSVC, and Multinomial Naive Bayes classifiers are trained and evaluated.
+Metrics such as F1 score, accuracy, precision, recall, ROC curve, and AUC are calculated for each classifier.
+Bag of Words (BoW) Vectorization and Model Evaluation: Similar to TF-IDF, BoW vectorization is applied, and the same classifiers are trained and evaluated.
 
-Similar to TF-IDF vectorization, Bag of Words (BoW) vectorization is applied to the text data.
-The same four classifiers are trained and evaluated on the BoW representations, and the results are printed.
-Doc2Vec Vectorization and Model Evaluation:
+Doc2Vec Vectorization and Model Evaluation: Doc2Vec vectorization is applied using Gensim. Two classifiers (SVC and Multinomial Naive Bayes) are trained and evaluated on Doc2Vec vectors.
 
-Doc2Vec vectorization is applied to the text data using the Gensim library. It transforms the text documents into dense numerical vectors.
-The code trains a Doc2Vec model on the combined dataset (training and test) and then uses this model to infer vectors for both training and test data.
-Two classifiers, Support Vector Classifier (SVC) and Multinomial Naive Bayes, are trained and evaluated on the Doc2Vec vectors.
-Results are printed for both classifiers.
+The code provides a comprehensive comparison of classifier performance using different text representation techniques, aiding in selecting the most suitable approach for sentiment analysis of movie reviews.
+
+
+
+
 
